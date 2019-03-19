@@ -1,8 +1,7 @@
 FROM alpine:latest
-LABEL maintainer="Martijn Rondeel <martijn@rondeel.email>"
 
-ENV LUA_VERSION 5.3.4
-ENV LUAROCKS_VERSION 2.4.4
+ENV LUA_VERSION 5.3.5
+ENV LUAROCKS_VERSION 3.0.4
 
 RUN apk add --update --no-cache readline-dev libc-dev make gcc wget git zip unzip
 
