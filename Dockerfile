@@ -3,7 +3,7 @@ FROM alpine:latest
 ENV LUA_VERSION 5.3.5
 ENV LUAROCKS_VERSION 3.0.4
 
-RUN apk add --update --no-cache readline-dev libc-dev make gcc wget git zip unzip md5sum
+RUN apk add --update --no-cache readline-dev libc-dev make gcc wget git zip unzip md5
 
 RUN wget https://www.lua.org/ftp/lua-${LUA_VERSION}.tar.gz -O - | tar -xzf -
 WORKDIR lua-$LUA_VERSION
