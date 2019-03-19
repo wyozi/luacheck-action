@@ -6,8 +6,7 @@ ENV LUAROCKS_VERSION 3.0.4
 RUN apk add --update --no-cache readline-dev libc-dev make gcc wget git zip unzip outils-md5
 
 RUN wget https://www.lua.org/ftp/lua-${LUA_VERSION}.tar.gz -O - | tar -xzf -
-WORKDIR lua-$LUA_VERSION
-RUN make -j"$(nproc)" linux; make install
+RUN cd lua-$LUA_VERSION && make -j"$(nproc)" linux; make install
 RUN cd / && rm -rf lua-${LUA_VERSION}
 
 RUN wget https://luarocks.github.io/luarocks/releases/luarocks-${LUAROCKS_VERSION}.tar.gz -O - | tar -xzf -
